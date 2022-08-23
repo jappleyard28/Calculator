@@ -64,7 +64,7 @@ namespace Calculator.Controllers
 
         public static List<string> listOfNums = new List<string>();
 
-        public bool multipleOperators(string op1, string op2)
+        public bool MultipleOperators(string op1, string op2)
         {
             bool qError = false;
             for (int i = 0; i < listOfNums.Count; i++)
@@ -155,7 +155,7 @@ namespace Calculator.Controllers
             {
                 qError = true;
             }
-            if (multipleOperators("/", "/") || multipleOperators("/", "*") || multipleOperators("*", "/") || multipleOperators("*", "*") || multipleOperators("+", "/") || multipleOperators("+", "*") || multipleOperators("+", "+") || multipleOperators("-", "/") || multipleOperators("-", "*"))
+            if (MultipleOperators("/", "/") || MultipleOperators("/", "*") || MultipleOperators("*", "/") || MultipleOperators("*", "*") || MultipleOperators("+", "/") || MultipleOperators("+", "*") || MultipleOperators("+", "+") || MultipleOperators("-", "/") || MultipleOperators("-", "*"))
             {
                 qError = true;
             }
@@ -166,10 +166,10 @@ namespace Calculator.Controllers
             else
             {
                 // uses BIDMAS for these 4 operators to prioritise the correct parts of the question
-                solveOperators("/");
-                solveOperators("*");
-                solveOperators("+");
-                solveOperators("-");
+                SolveOperators("/");
+                SolveOperators("*");
+                SolveOperators("+");
+                SolveOperators("-");
 
 
                 // output answer
@@ -179,7 +179,7 @@ namespace Calculator.Controllers
             return RedirectToAction("Index");
         }
 
-        public void solveOperators(string operatorUsed)
+        public void SolveOperators(string operatorUsed)
         {
             bool running = true;
             while (running)
