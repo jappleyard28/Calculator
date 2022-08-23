@@ -1,0 +1,82 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Calculator</h1>
+    <br />
+    <br />
+</div>
+
+<form>
+    <table class="calculator">
+        <tr id="topRow">
+            <td colspan="4">
+                <div id="output">
+                    @TempData["buttonval"]
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <button name="button" value="clear" asp-action="clearButton" id="clear">clear</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button name="button" value="7" asp-action="inputButton">7</button>
+            </td>
+            <td>
+                <button name="button" value="8" asp-action="inputButton">8</button>
+            </td>
+            <td>
+                <button name="button" value="9" asp-action="inputButton">9</button>
+            </td>
+            <td>
+                <button name="button" value="/" asp-action="inputButton" class="operators">/</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button name="button" value="4" asp-action="inputButton">4</button>
+            </td>
+            <td>
+                <button name="button" value="5" asp-action="inputButton">5</button>
+            </td>
+            <td>
+                <button name="button" value="6" asp-action="inputButton">6</button>
+            </td>
+            <td>
+                <button name="button" value="*" asp-action="inputButton" class="operators">*</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button name="button" value="1" asp-action="inputButton">1</button>
+            </td>
+            <td>
+                <button name="button" value="2" asp-action="inputButton">2</button>
+            </td>
+            <td>
+                <button name="button" value="3" asp-action="inputButton">3</button>
+            </td>
+            <td>
+                <button name="button" value="-" asp-action="inputButton" class="operators">-</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button name="button" value="0" asp-action="inputButton">0</button>
+            </td>
+            <td>
+                <button name="button" value="." asp-action="inputButton">.</button>
+            </td>
+            <td>
+                <button name="button" value="=" asp-action="solveButton" class="operators">=</button>
+            </td>
+            <td>
+                <button name="button" value="+" asp-action="inputButton" class="operators">+</button>
+            </td>
+        </tr>
+    </table>
+</form>
