@@ -159,6 +159,10 @@ namespace Calculator.Controllers
             {
                 qError = true;
             }
+            if (expression[0] == '/' || expression[^1] == '*' || expression[^1] == '+')
+            {
+                qError = true;
+            }
             if (qError)
             {
                 TempData["buttonval"] = "ERROR";
